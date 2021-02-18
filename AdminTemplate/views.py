@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Todo
 
 # Create your views here.
+todos = []
 
 
 def index(request):
@@ -9,53 +10,21 @@ def index(request):
 
 
 def table(request):
-
-    todo = Todo()
-    todo.subject = 'Travel'
-    todo.date = '20/2/2021'
-    todo.location = 'Nigeria'
-    todo.todoType = 'regular'
-    todo.description = 'i am nice'
-
-    return render(request, 'basic_table.html', {'todo': todo})
+    return render(request, 'basic_table.html', {'todos': todos})
 
 
 def submit(request):
-
-    todo = Todo()
-
-    todo.subject = 'Travel'
-    todo.date = '20/2/2021'
-    todo.location = 'Nigeria'
-    todo.todoType = 'regular'
-    todo.description = 'i am nice'
-    return render(request, 'basic_table.html')
+    return render(request, 'basic_table.html', {'todos': todos})
 
 
 def search(request):
 
-    todo = Todo()
-
-    todo.subject = 'Travel'
-    todo.date = '20/2/2021'
-    todo.location = 'Nigeria'
-    todo.todoType = 'regular'
-    todo.description = 'i am nice'
-
-    return render(request, 'search.html', {'todo': todo})
+    return render(request, 'search.html', {'todos': todos})
 
 
 def delete(request):
 
-    todo = Todo()
-
-    todo.subject = 'Travel'
-    todo.date = '20/2/2021'
-    todo.location = 'Nigeria'
-    todo.todoType = 'regular'
-    todo.description = 'i am nice'
-
-    return render(request, 'basic_table.html', {'todo': todo})
+    return render(request, 'basic_table.html', {'todos': todos})
 
 
 def form(request):

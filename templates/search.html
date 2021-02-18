@@ -54,10 +54,9 @@
         <ul class="nav top-menu">
           <li>
             <form class="navbar-form" action="search" method="POST">
-              {%csrf_token %}
               <input class="form-control" placeholder="Search" type="text">
-              <button type="submit" class="btn btn-primary">Search</button>
             </form>
+            <button type="submit" class="btn btn-primary">Search</button>
           </li>
         </ul>
         <!--  search form end -->
@@ -98,7 +97,7 @@
                     <th><i ></i>Description</th>
                     <th><i class="icon_cogs"></i> Action</th>
                   </tr>
-                  {% for todo in todos %}
+                 {% for todo in todos %}
                   <tr>
                     <td>{{todo.subject}}</td>
                     <td>{{todo.date}}</td>
